@@ -1,29 +1,10 @@
-# README #
+# Dockerized Xenforo v.2
+This a dockerized version of Xenforo v. 2.2.6 patch 2. Due to license protection the Xenforo files can't be uploaded in the repository nor in a Docker image, you would have to manually provide them before starting the containers.
 
-This README would normally document whatever steps are necessary to get your application up and running.
-
-### What is this repository for? ###
-
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
-
-### How do I get set up? ###
-
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+## Installation
+1. Place all the Xenforo files in the folder /data/web/var/www/html/.
+2. Add in the root folder the SSL certificates (you can use Certbot to create them)
+3. Edit the default-site.conf file to match your needs
+4. Configure the database credentials in the docker-compose.yml file
+5. Start the containers using docker-compose up --build -d
+6. Install Xenforo following the official guide
