@@ -1,0 +1,28 @@
+version: "3"
+services:
+    forum:
+        restart: always
+        build:
+            context: .
+            dockerfile: Dockerfile
+        links: 
+            - db
+        ports:
+            - 8012:80
+            - 8014:443
+        volumes:
+        -  ./data/web/var/www/html:/var/www/html
+    db:
+        image: mysql:5.7
+        restart: always
+        environment:
+            MYSQL_DATABASE: ''
+            MYSQL_USER: ''
+            MYSQL_PASSWORD: ''
+            MYSQL_ROOT_PASSWORD: ''
+        ports:
+            - "8013:3306"
+        expose:
+            - "3306"
+        volumes:
+        - ./data/db/:/var/lib/mysql
