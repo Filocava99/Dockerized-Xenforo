@@ -20,7 +20,5 @@ services:
             MYSQL_USER: ''
             MYSQL_PASSWORD: ''
             MYSQL_ROOT_PASSWORD: ''
-        ports:
-            - "8013:3306"
         volumes:
         - ./data/db/:/var/lib/mysql
